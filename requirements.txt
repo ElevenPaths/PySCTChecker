@@ -1,0 +1,4 @@
+ecdsa==0.13
+pyOpenSSL==16.2.0
+pycrypto==2.6.1
+requests==2.13.0
