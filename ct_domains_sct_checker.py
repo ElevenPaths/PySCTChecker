@@ -1,4 +1,20 @@
-# coding=utf-8
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""
+ Copyright (C) 2016 Eleven Paths
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+"""
 
 import re
 import hashlib
@@ -251,7 +267,6 @@ def _check_host_sct(host_name):
             command = "openssl ocsp -issuer tmp/chain_" + cert_aux_filename + " -cert tmp/" + cert_aux_filename \
                 + " -respout tmp/" + cert_aux_filename + ".tmp -url http://" + ocsp_url \
                 + " -header HOST " + ocsp_url + " -VAfile tmp/chain_" + cert_aux_filename + "2>&1"
-            print "Comando 4: " + command
             tmp = os.popen(command).read()
 
             with open('tmp/' + cert_aux_filename + ".tmp", mode='rb') as file:  # b is important -> binary
@@ -273,7 +288,6 @@ def _check_host_sct(host_name):
         except Exception as e:
             # NO OCSP
             print "\t> No sct found in OCSP response"
-            print "Error: " + repr(e)
 
         finally:
             if os.path.exists('tmp/' + cert_aux_filename + '.tmp'):
