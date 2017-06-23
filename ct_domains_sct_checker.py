@@ -26,6 +26,7 @@ import json
 import config
 import math
 import ecdsa
+import argparse
 
 from OpenSSL import crypto
 
@@ -460,4 +461,11 @@ def _check_host_sct(host_name):
                 print "\t> Unknown log"
 
 if __name__ == '__main__':
-    _check_host_sct(sys.argv[1])
+ 
+    print "\nCertificateTransparency-SCTChecker (c) ElevenPaths. Version: 0.1.0.0\n"
+    parser = argparse.ArgumentParser()
+    parser.add_argument('data', type=str, action="append", required=True, help='Catching data from your domains')
+    args = parser.parse_args()
+
+    for domain in args.data:
+        _check_host_sct(domain)
