@@ -463,9 +463,14 @@ def _check_host_sct(host_name):
 if __name__ == '__main__':
  
     print "\nCertificateTransparency-SCTChecker (c) ElevenPaths. Version: 0.1.0.0\n"
-    parser = argparse.ArgumentParser()
-    parser.add_argument('data', type=str, action="append", required=True, help='Catching data from your domains')
+    parser = argparse.ArgumentParser(description="Checks Certificate Transparency for the introduced domain list.")
+    parser.add_argument('domains', type=str, nargs='+', help='Domain list to check CT')
     args = parser.parse_args()
 
-    for domain in args.data:
+    for domain in args.domains:
+        print "__________________________________________________________________________"
+        print "DOMAIN: " + domain
+        print "--------------------------------------------------------------------------"
         _check_host_sct(domain)
+        print "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+
