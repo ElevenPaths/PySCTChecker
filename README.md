@@ -1,10 +1,10 @@
-CertificateTransparency-SCTChecker 
+PySCTChecker
 ====================================
 
 Description
 -----------
-This is a Quick and dirty Python script for checking if a domain implements properly Certificate Transparency. If so, it is possible to observe how Certificate Transparency is implemented on the server side.
-When a server implements Certificate Transparency, it must offer at least one SCT (a proof of inclusion of the server TLS Certificate into a Transparency Log). A SCT can be offered by three different ways: embedded in the certificate, as a TLS extension and via OCSP Stapling. Using CertificateTransparency-SCTChecker is possible to identify the delivery options that the server uses and the logs in which the certificate has been sent. Also, it is possible to check if the offered SCTs are valid and legitimately signed by logs.
+This is a Quick and dirty Python script for checking if a domain properly implements Certificate Transparency. If so, it is possible to observe how Certificate Transparency is implemented on the server side.
+When a server implements Certificate Transparency, it must offer at least one SCT (a proof of inclusion of the server TLS Certificate into a Transparency Log). A SCT can be offered by three different ways: embedded in the certificate, as a TLS extension and via OCSP Stapling. Using PySCTChecker is possible to identify the delivery options that the server uses and the logs the certificate has been sent to. Also, it is possible to check if the offered SCTs are valid and legitimately signed by logs.
 
 Functionality
 -------------
