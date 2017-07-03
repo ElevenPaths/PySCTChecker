@@ -10,11 +10,11 @@ Functionality
 -------------
   -	 **Usage**: 
   
-          python CertificateTransparency-SCTChecker/ct_domains_sct_checker.py [domain1 domain2 ...]
+          python PySCTChecker/ct_domains_sct_checker.py [domain1 domain2 ...]
 
   -	 **Output example:**
 
-      user@ubuntu:~/Desktop/CertificateTransparency-SCTChecker$ python ct_domains_sct_checker.py elevenpaths.com
+      user@ubuntu:~/Desktop/PySCTChecker$ python ct_domains_sct_checker.py elevenpaths.com
 
       ** Connecting to host: elevenpaths.com... **
 
@@ -40,10 +40,10 @@ Functionality
 
   -	 **Dependencies:**
 
-      - To run CertificateTransparency-SCTChecker is necessary to have **OpenSSL** installed on the OS
+      - To run PySCTChecker, **OpenSSL** is required.
       - To install python modules dependencies, run:
 
-            sudo pip install -r CertificateTransparency-SCTChecker/requirements.txt
+            sudo pip install -r PySCTChecker/requirements.txt
 
 Related tools
 -------------
