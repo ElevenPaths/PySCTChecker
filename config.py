@@ -1,1 +1,1 @@
-CT_LOGS_LIST = "https://www.certificate-transparency.org/known-logs/all_logs_list.json?attredirects=0"
+CT_LOGS_LIST = "https://www.gstatic.com/ct/log_list/log_list.json"
